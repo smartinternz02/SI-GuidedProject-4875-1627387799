@@ -1,0 +1,108 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			body, html {
+				height: 100%;
+				margin: 0;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+			* {
+				box-sizing: border-box;
+			}
+		
+			.bg-image {
+				/* The image used */
+				background-image:url({{url_for('static',filename='images/1.jpg')}}); 
+				
+				/* Add the blur effect */
+				filter: blur(8px);
+				-webkit-filter: blur(8px);
+				
+				/* Full height */
+				height: 100%; 
+				
+				/* Center and scale the image nicely */
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+		
+			/* Position text in the middle of the page/image */
+			.bg-text {
+				background-color: rgba(0, 0, 0, 0.267); /* Black w/opacity/see-through */
+				font-weight: bolder;
+				border: 3px solid #f1f1f1;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				z-index: 2;
+				width: 80%;
+				padding: 20px;
+				text-align: center;
+			}
+			.bg-text h1{
+				color: rgba(8, 3, 56, 0.774);
+				font-weight: bolder;
+				text-transform: uppercase;
+			}
+			.bg-text p{
+				font-weight: lighter;
+				color: black;
+			}
+			.b1 {
+						background-color: rgba(172, 14, 14, 0.842);
+						text-transform: uppercase;
+						border: none;
+						color: #FFFFFF;
+						text-align: center;
+						width: 300px;
+						font-weight: 700;
+						font-size: 12px;
+						padding: 10px 15px;
+						transition: all 0.5s;
+						cursor: pointer;
+						margin: 5px;
+					}
+					.b1 span {
+						cursor: pointer;
+						display: inline-block;
+						position: relative;
+						transition: 0.5s;
+					}
+		
+					.b1 span:after {
+						content: '\00bb';
+						position: absolute;
+						opacity: 0;
+						top: 0;
+						right: -20px;
+						transition: 0.5s;
+					}
+		
+					.b1:hover span {
+						padding-right: 25px;
+					}
+		
+					.b1:hover span:after {
+						opacity: 1;
+						right: 0;
+					}
+		</style>
+		</head>
+	<body>
+		<div class="bg-image"></div>
+		<div class="bg-text">
+			<h1>Wind Turbine Energy Prediction Based on Weather Conditions</h2>
+					<p>Renewable energy, such as wind and solar energy, plays an increasing role in the supply of energy worldwide. This trend will continue because global energy demand is increasing, and the use of nuclear power and traditional sources of energy such as coal and oil is unsafe and leads to a large amount of CO2 emission. Wind energy is a key player in the field of renewable energy. In Europe, the capacity of wind energy production has doubled from 2009 to 2010. <br><br>
+						However, levels of production of wind energy are hard to predict as they rely on potentially unstable weather conditions present at the wind farm. In particular, wind speed is crucial for energy production based on wind, and it may vary drastically over time. Energy suppliers are interested in accurate predictions, as they can avoid overproduction by coordinating the collaborative production of traditional power plants and weather-dependent energy sources. The energy can be predicted based on the power curve and the windspeed.</p><br><br><br>
+		<a href="{{url_for('predict')}}"><button type="button" class="b1" ><span>Want to predict the energy??</span></button></a>
+		</div>
+		
+		
+		</div>
+	</body>
+</html>
+
+
